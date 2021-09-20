@@ -14,5 +14,17 @@
     <hr>
     <h1>Welcome To My First Spring WebApp</h1>
     <h1 th:text="${name}"></h1>
+    <hr>
+    <label>
+        <input id="productSearchInput" placeholder="Enter Product Name..." type="text">
+    </label>
+    <button onclick="searchProduct()">Search</button>
+    <script>
+        function searchProduct()
+        {
+            const pID = document.getElementById("productSearchInput").value
+            location.href = `/products/single/${pID}`
+        }
+    </script>
 </body>
 </html>

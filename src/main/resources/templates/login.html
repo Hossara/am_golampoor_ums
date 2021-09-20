@@ -5,21 +5,24 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home Page</title>
+    <title>Login Page</title>
 </head>
 <body>
-    <a th:href="@{/}">Home</a>
-    <a th:href="@{/about}">About</a>
-    <a th:href="@{/contact}">Contact</a>
-    <hr>
-    <form th:action="@{/about}" method="get">
-        <label>
-            <input type="text" placeholder="Enter your name" name="name">
-        </label>
+    <form th:action="@{/login}" method="post">
 
+        <h1>Login Page</h1>
+
+        <label>
+            <input type="text" name="username" placeholder="Please enter your username...">
+        </label>
+        <br>
+        <label>
+            <input type="text" name="password" placeholder="Please enter your password...">
+        </label>
+        <br>
         <button type="submit">Submit</button>
     </form>
     <hr>
-    <h1 th:if="${ali != null}">Your Name Is <th:block th:utext="${ali}"/></h1>
+    <h1 th:if="${res != null}">Username Or Password is incorrect</h1>
 </body>
 </html>

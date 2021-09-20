@@ -14,16 +14,16 @@ class MainController
 )
 {
     @GetMapping("/")
-    fun homePage(@RequestParam(required = false) name: String?, model: Model): String
+    fun homePage(@RequestParam name: String?, model: Model): String
     {
         model.addAttribute("name", name)
         return "index"
     }
 
     @GetMapping("/about")
-    fun aboutPage(@RequestParam(required = false) name: String?, model: Model): String
+    fun aboutPage(@RequestParam name: String?, model: Model): String
     {
-        model.addAttribute("name", name)
+        model.addAttribute("ali", name)
         return "about"
     }
 
